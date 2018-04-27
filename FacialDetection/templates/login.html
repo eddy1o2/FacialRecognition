@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script type="text/javascript" src="{% static 'vendor/bootstrap.js' %}"></script>
+    <title>Login</title>
+</head>
+<body>
+<div class="login" align="center">
+    <h1>Login to Your Account</h1>
+    <hr>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-sm-4 push-sm-4">
+                <form method="post">
+                    {% csrf_token %}
+                    {% for key, value in form.errors.items %}
+                        {{ value }}
+                    {% endfor %}
+
+                    <p><label class="usermodal">Username: </label>{{ form.username }}</p>
+                    <p><label class="passwordmodal">Password: </label>{{ form.password }}</p>
+                    <input type="hidden" name="next" value="/">
+                    <input class="btn btn-outline-primary" type="submit" value="Sign in">
+                    <a href="{% url 'register' %}" role="button"
+                       class="btn btn-outline-success signup">Sign up</a>
+                    <a href="{% url 'home' %}" role="button"
+                       class="btn btn-outline-danger cancel">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

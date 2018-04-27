@@ -1,0 +1,26 @@
+h1 {
+    font-family: monospace;
+    margin-top:  30px;
+    font-weight:  bolder;
+    color: #00b4ff;
+}
+
+label.usermodal {
+    font-family:  monospace;
+}
+
+label.passwordmodal {
+    font-family:  monospace;
+}
+
+input#id_username {
+    margin-left:  15px;
+}
+
+input#id_password {
+    margin-left:  15px;
+}
+
+a.btn.btn-outline-success.signup {
+    margin:  0px 15px 0px 15px;
+}
